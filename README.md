@@ -27,6 +27,7 @@ Configure your Cursor MCP server to use this server running in your local machin
     }
   }
 }
+```
 
 To configure the MCP server in Cursor, go to `Preferences > MCP Servers` and add the server configuration above.
 

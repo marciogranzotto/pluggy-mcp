@@ -52,3 +52,4 @@ Call `server.tool(name, schema, handler)` in `src/index.ts`. The schema uses `zo
 Requires a `.env` file (loaded via `dotenv`) or environment variables:
 - `PLUGGY_CLIENT_ID`
 - `PLUGGY_CLIENT_SECRET`
+- `PLUGGY_ITEM_ID` — optional, only needed for integration tests (a real item ID from your Pluggy dashboard)

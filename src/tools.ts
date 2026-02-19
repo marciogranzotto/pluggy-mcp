@@ -38,18 +38,6 @@ export async function handleListConnectors(_params: Record<string, never>): Prom
   } catch (err) { return caughtResponse(err); }
 }
 
-export async function handleListItems(_params: Record<string, never>): Promise<ToolResponse> {
-  try {
-    const accessToken = await getPluggyAccessToken();
-    const response = await fetch('https://api.pluggy.ai/items', {
-      headers: { 'X-API-KEY': accessToken },
-    });
-    const json = await response.json();
-    if (!response.ok) return errorResponse(response.status, json?.message ?? JSON.stringify(json));
-    return okResponse(json);
-  } catch (err) { return caughtResponse(err); }
-}
-
 export async function handleGetItem({ itemId }: { itemId: string }): Promise<ToolResponse> {
   try {
     const accessToken = await getPluggyAccessToken();

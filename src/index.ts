@@ -7,7 +7,6 @@ import 'dotenv/config';
 import {
   handleGetAccounts,
   handleListConnectors,
-  handleListItems,
   handleGetItem,
   handleGetTransactions,
   handleGetInvestments,
@@ -24,8 +23,6 @@ server.tool("getAccounts",
   handleGetAccounts);
 
 server.tool("listConnectors", {}, handleListConnectors);
-
-server.tool("listItems", {}, handleListItems);
 
 server.tool("getItem",
   { itemId: z.string().describe("The Pluggy item ID") },

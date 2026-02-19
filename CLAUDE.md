@@ -39,7 +39,6 @@ Call `server.tool(name, schema, handler)` in `src/index.ts`. The schema uses `zo
 |---|---|---|
 | `listConnectors` | `GET /connectors` | — |
 | `getAccounts` | `GET /accounts` | `itemId` |
-| `listItems` | `GET /items` | — |
 | `getItem` | `GET /items/:itemId` | `itemId` |
 | `getTransactions` | `GET /transactions` | `accountId`, `from`, `to`, `page`, `pageSize` |
 | `getInvestments` | `GET /investments` | `itemId` |

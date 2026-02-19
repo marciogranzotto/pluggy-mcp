@@ -8,9 +8,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 npm install          # Install dependencies
 npm run build        # Compile TypeScript to dist/ (also runs on npm install via prepare)
 npm run watch        # Watch mode for development (hot-reload on save)
+npm test                 # Run all tests
+npm run test:unit        # Unit tests only (no credentials needed)
+npm run test:integration # Integration smoke test (requires .env with real credentials)
+npm run test:watch       # Watch mode
 ```
 
-There are no tests configured yet.
+## Testing
+
+Tests live in `src/tests/`. Unit tests mock `fetch` and `getPluggyAccessToken` via `vi.mock`/`vi.stubGlobal` — no credentials needed. The integration smoke test hits the real Pluggy sandbox and is skipped automatically when `PLUGGY_CLIENT_ID`/`PLUGGY_CLIENT_SECRET` are absent.
+
+Handler logic lives in `src/tools.ts` (importable, testable). `src/index.ts` is wiring-only (registers tools with the MCP server). `src/auth.ts` exports `getPluggyAccessToken()`.
 
 ## Architecture
 
